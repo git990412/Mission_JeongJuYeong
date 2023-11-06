@@ -6,7 +6,13 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 =======
+<<<<<<< HEAD
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+=======
+
+>>>>>>> main
 >>>>>>> main
 public @Data class LifeQuotes {
     private int id;
