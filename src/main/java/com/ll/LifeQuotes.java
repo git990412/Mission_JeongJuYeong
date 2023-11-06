@@ -1,7 +1,9 @@
 package com.ll;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 public @Data class LifeQuotes {
     private int id;
     private String author;
