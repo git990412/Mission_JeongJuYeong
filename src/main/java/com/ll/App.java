@@ -18,17 +18,6 @@ public class App {
         String quotes = "";
         String author = "";
 
-
-<<<<<<< HEAD
-        try{
-            lqList = objectMapper.readValue(new File("List.json"),
-                    objectMapper.getTypeFactory().constructCollectionType(List.class, LifeQuotes.class));
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-=======
->>>>>>> main
-
         try{
             lqList = objectMapper.readValue(new File("List.json"),
                     objectMapper.getTypeFactory().constructCollectionType(List.class, LifeQuotes.class));
@@ -40,18 +29,9 @@ public class App {
         System.out.println("== 명언 앱 ==");
         while (true){
             System.out.print("명령)");
-<<<<<<< HEAD
 
             command = sc.next().trim();
-
-=======
-<<<<<<< HEAD
-            command = sc.next().trim();
-=======
->>>>>>> main
             command = sc.next();
->>>>>>> main
-
 
             switch (command){
                 case "등록":
@@ -80,13 +60,6 @@ public class App {
                 case "종료":
                     try{
                         objectMapper.writeValue(new File("List.json"), lqList);
-<<<<<<< HEAD
-
-
-                        return;
-=======
-<<<<<<< HEAD
-
                         return;
                     }catch (IOException e){
                         e.printStackTrace();
@@ -137,61 +110,6 @@ public class App {
                             }
                         }
                     }
-=======
->>>>>>> main
-                    }catch (IOException e){
-                        e.printStackTrace();
-
-                        return;
-                    }
-                default:
-                    if(command.contains("삭제")){
-                        int tempIdx = Integer.parseInt(command.split("=")[1]);
-
-<<<<<<< HEAD
-                        for(int i = 0; i < lqList.size(); i++){
-                            if(lqList.get(i).getId() == tempIdx){
-                                lqList.remove(i);
-                                System.out.println(Integer.toString(tempIdx) + "번 명언이 삭제되었습니다.");
-                            }
-                            else{
-                                System.out.println(Integer.toString(tempIdx) + "번 명언은 존재하지 않습니다.");
-                            }
-                        }
-                    } else if (command.contains("수정")) {
-                        int tempIdx = Integer.parseInt(command.split("=")[1]);
-                        String prevQuotes = "";
-                        String prevAuthor = "";
-
-                        for(int i = 0; i < lqList.size(); i++){
-                            if(lqList.get(i).getId() == tempIdx){
-                                prevQuotes = lqList.get(i).getQuotes();
-                                prevAuthor = lqList.get(i).getAuthor();
-                            }
-                        }
-
-                        System.out.println("명언(기존) : " + prevQuotes);
-                        System.out.print("명언 : ");
-                        String tempQuotes = sc.next();
-
-                        System.out.println("작가(기존) : " + prevAuthor);
-                        System.out.print("작가 : ");
-                        String tempAuthor = sc.next();
-
-                        for(int i = 0; i < lqList.size(); i++){
-                            if(lqList.get(i).getId() == tempIdx){
-                                lqList.get(i).setQuotes(tempQuotes);
-                                lqList.get(i).setAuthor(tempAuthor);
-                                System.out.println(Integer.toString(tempIdx) + "번 명언이 수정되었습니다.");
-                            }
-                            else{
-                                System.out.println(Integer.toString(tempIdx) + "번 명언은 존재하지 않습니다.");
-                            }
-                        }
-                    }
-=======
->>>>>>> main
->>>>>>> main
             }
         }
     }
