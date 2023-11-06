@@ -29,9 +29,7 @@ public class App {
         System.out.println("== 명언 앱 ==");
         while (true){
             System.out.print("명령)");
-
             command = sc.next().trim();
-            command = sc.next();
 
             switch (command){
                 case "등록":
