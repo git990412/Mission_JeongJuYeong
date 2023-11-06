@@ -1,7 +1,13 @@
 package com.ll;
 
 import lombok.Data;
+<<<<<<< HEAD
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+=======
+
+>>>>>>> main
 public @Data class LifeQuotes {
     private int id;
     private String author;
