@@ -19,24 +19,23 @@ public class App {
         String author = "";
 
 
-<<<<<<< HEAD
+
         try{
             lqList = objectMapper.readValue(new File("List.json"),
                     objectMapper.getTypeFactory().constructCollectionType(List.class, LifeQuotes.class));
         }catch (IOException e){
             e.printStackTrace();
         }
-=======
->>>>>>> main
+
 
         System.out.println("== 명언 앱 ==");
         while (true){
             System.out.print("명령)");
-<<<<<<< HEAD
+
             command = sc.next().trim();
-=======
+
             command = sc.next();
->>>>>>> main
+
 
             switch (command){
                 case "등록":
@@ -65,7 +64,7 @@ public class App {
                 case "종료":
                     try{
                         objectMapper.writeValue(new File("List.json"), lqList);
-<<<<<<< HEAD
+
 
                         return;
                     }catch (IOException e){
@@ -117,13 +116,6 @@ public class App {
                             }
                         }
                     }
-=======
-                    }catch (IOException e){
-                        e.printStackTrace();
-                    }
-                default:
-
->>>>>>> main
             }
         }
     }
