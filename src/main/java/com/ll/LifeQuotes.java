@@ -1,17 +1,14 @@
+//LifeQuotes.java
 package com.ll;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
+@AllArgsConstructor
 public @Data class LifeQuotes {
-    private int id;
+    private Long id;
     private String author;
     private String quotes;
-
-    public LifeQuotes(int id, String author, String quotes){
-        this.id = id;
-        this.author = author;
-        this.quotes = quotes;
-    }
 }
