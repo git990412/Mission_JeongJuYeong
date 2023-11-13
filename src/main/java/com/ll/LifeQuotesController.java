@@ -12,24 +12,19 @@ public class LifeQuotesController {
         while (true) {
             System.out.print("명령) ");
             String command = scanner.next().trim();
-
-            switch (command) {
-                case "목록":
-                    displayQuotes();
-                    break;
-                case "등록":
-                    addQuote();
-                    break;
-                case "삭제":
-                    deleteQuote();
-                    break;
-                case "수정":
-                    updateQuote();
-                    break;
-                case "종료":
-                    return;
-                default:
-                    System.out.println("잘못된 명령어입니다.");
+            
+            if(command.equals("목록")){
+                displayQuotes();
+            } else if (command.equals("등록")) {
+                addQuote();
+            } else if (command.equals("종료")) {
+                return;
+            } else if (command.contains("삭제")) {
+                long idx = Integer.parseInt(command.split("=")[1]);
+                deleteQuote(idx);
+            } else if (command.contains("수정")) {
+                long idx = Integer.parseInt(command.split("=")[1]);
+                updateQuote(idx);
             }
         }
     }
@@ -53,18 +48,12 @@ public class LifeQuotesController {
         System.out.println(newQuote.getId() + "번 명언이 등록되었습니다.");
     }
 
-    private void deleteQuote() {
-        System.out.print("삭제할 명언의 번호: ");
-        Long id = scanner.nextLong();
-
+    private void deleteQuote(Long id) {
         quotesService.deleteQuote(id);
         System.out.println(id + "번 명언이 삭제되었습니다.");
     }
 
-    private void updateQuote() {
-        System.out.print("수정할 명언의 번호: ");
-        Long id = scanner.nextLong();
-
+    private void updateQuote(Long id) {
         System.out.print("새로운 작가: ");
         String author = scanner.next().trim();
         System.out.print("새로운 명언: ");
